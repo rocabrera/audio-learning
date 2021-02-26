@@ -44,16 +44,15 @@ def plot_DFT(input_signal, plot=True):
         fig, axs = plt.subplots(1,2,figsize = (20,6))
 
         axs[0].stem(ks, np.abs(X_k))
-        axs[0].set_ylabel("Magnitude",fontsize = 16)
+        axs[0].set_ylabel("Decibels",fontsize = 16)
 
-        axs[1].stem(ks, np.angle(X_k, deg=True))
+        axs[1].stem(ks, np.unwrap(np.angle(X_k,deg=True),discont=180))
         axs[1].set_ylabel("Graus",fontsize = 16)
 
         for ax in axs.flatten():
             ax.set_xlabel("Frequência",fontsize = 16)
             ax.set_xlim(-N/2, N/2-1)
             
-
         plt.suptitle("Discrete Fourier Transform",fontsize = 22)
         plt.tight_layout()
         plt.show()
