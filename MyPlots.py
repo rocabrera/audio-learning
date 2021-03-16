@@ -4,21 +4,27 @@ import matplotlib.pyplot as plt
 
 def plot_complex_exponential(A, f, phi, fs):
     
-    T   = 1/fs
-    t   = np.arange(0, 1, T)
-    cexp = np.exp(1j*(2*np.pi*f*t+phi))    
+    Ts    = 1/fs
+    Tr    = 1/(f*100)
+    ts    = np.arange(0, 1+Ts, Ts)
+    tr    = np.arange(0, 1+Tr, Tr)
+    cexps = np.exp(1j*(2*np.pi*f*ts+phi))    
+    cexpr = np.exp(1j*(2*np.pi*f*tr+phi))    
     
-    real_cexp = np.real(cexp)
-    imag_cexp = np.imag(cexp)
+    real_cexpr = np.real(cexpr)
+    imag_cexpr = np.imag(cexpr)
     
-    ys     = [real_cexp, imag_cexp]
+    real_cexps = np.real(cexps)
+    imag_cexps = np.imag(cexps)
+    
+    ys     = [(real_cexps, real_cexpr), (imag_cexps, imag_cexpr)]
     titles = ["Parte real", "Parte imaginária"]
     fig, axs = plt.subplots(2,1,figsize = (20,6))
     
     for y, title, ax in zip(ys, titles, axs.flatten()):
-        
-        ax.scatter(t,y, label = "Amostras", c = 'k')
-        ax.plot(t,y, label = '"Dados reais"', c='r')
+        y_sample, y_real = y
+        ax.scatter(ts, y_sample, label = "Amostras", c = 'k')
+        ax.plot(tr, y_real, label = '"Dados reais"', c='r')
         ax.set_xlabel("Tempo (s)", fontsize = 14)
         ax.set_ylabel("Amplitude",fontsize = 14)
         ax.set_title(title,fontsize = 22)

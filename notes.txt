@@ -1,0 +1,30 @@
+Phase is important to hearing because the effect of adding two sounds 
+together depends on their relative phase.
+
+The amplitude, or pressure, of a sound wave produced by a loudspeaker is
+proportional to the velocity of the speaker cone.
+
+
+Although pressure is a useful measure, it is also common in acoustics to refer
+to the intensity of a sound wave. Intensity is defined as the sound energy passing
+through a unit area (e.g., a square meter of air) every second. Power is defined
+simply as the energy transmitted per second.
+
+
+loudness (i.e., perceived magnitude)
+
+Now the range of numbers we have to deal with when describing sounds is 
+reduced from a factor of about 1,000,000,000,000 (in units of intensity) to a range from about
+0 to 120 dB SPL.
+
+
+The phase spectrum of a sound is the distribution of the phases 
+(temporal alignments) of the pure-tone components that make up
+the sound.
+
+
+
+The short-term spectrum at a given time is produced by performing
+a Fourier analysis of a short duration of the waveform centered on that time. The
+analysis “window” usually applies a weighting so that the waveform near the
+edges of the window is attenuated relative to the center.
