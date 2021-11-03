@@ -1,12 +1,7 @@
 import torch
 from typing import Any, Dict, List, Optional, Union
 
-from transformers import (Wav2Vec2CTCTokenizer, 
-                          Wav2Vec2FeatureExtractor, 
-                          Wav2Vec2Processor, 
-                          Wav2Vec2ForCTC,
-                          TrainingArguments,
-                          Trainer)
+from transformers import Wav2Vec2Processor
 
 from dataclasses import dataclass
 
